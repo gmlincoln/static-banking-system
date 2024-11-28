@@ -27,9 +27,12 @@ class Banking:
     def withdraw(self, withdraw_amount):
 
         if self.balance >= withdraw_amount:
+            if  withdraw_amount > 0:
+                self.balance -= withdraw_amount
+                return self.balance
+            else:
+                print(f"Sorry! You can't withdraw ৳ {withdraw_amount}.")
 
-            self.balance -= withdraw_amount
-            return self.balance
         else:
             print(f"Withdrawal amount is exceed the available balance")
 
